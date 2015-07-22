@@ -41,7 +41,7 @@ if (localStorage.skin) {
 //Send the url to pocket
 $('#addUrl').click(function() {
     var url = $('#url').val();
-	if(url.toLowerCase().substring(0, 6) != "http://" && url.toLowerCase().substring(0, 7) != "https://") {
+	if(url.toLowerCase().substring(0, 7) != "http://" && url.toLowerCase().substring(0, 8) != "https://") {
 		console.log("We have to add http to the url");
 		url = "http://"+url;
 	}
@@ -53,7 +53,7 @@ $('#addUrl').click(function() {
 
 $('#addUrlActivity').click(function() {
     var url = $('#url').val();
-	if(url.toLowerCase().substring(0, 6) != "http://" && url.toLowerCase().substring(0, 7) != "https://") {
+	if(url.toLowerCase().substring(0, 7) != "http://" && url.toLowerCase().substring(0, 8) != "https://") {
 		console.log("We have to add http to the url");
 		url = "http://"+url;
 	}
