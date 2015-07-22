@@ -114,3 +114,14 @@ section[role="region"] {
 menu {
 	color: white;
 }
+
+#article_content{
+  line-height: 1.8em;
+  padding: 0.5em;
+  background-color: #EfE0B9;
+  color: #643B0F;
+}
+
+#article_content img {
+  width: 100%;
+}

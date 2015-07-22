@@ -5,11 +5,25 @@
 //alert(localStorage.accesskey);
 pocketkey = "POCKETCONSUMERKEY";
 readabilityToken= "READABILITYTOKEN";
+
+function getPocketQueryParams() {
+  var since = new Date();
+  since.setDate(since.getDate() - 10);
+
+  return ("state=" + "all"
+    + "&consumer_key=" + pocketkey 
+    + "&access_token="+ localStorage.accesskey 
+    + "&since=" + since.getTime() / 1000 + 
+    //+ "&sort=" + "newest"
+    + "&sort=" + "oldest"
+  )
+}
 if (!localStorage.accesskey) {
 	window.location.href = "login.html";
 }
 if (!localStorage.list) {
-	$.post('https://getpocket.com/v3/get', "state=all&consumer_key=" + pocketkey + "&access_token="+localStorage.accesskey, function (response) {
+
+	$.post('https://getpocket.com/v3/get', getPocketQueryParams(), function (response) {
         console.log(response);  
 		var response_json = JSON.parse(response);
 		var article_list = response_json.list;
@@ -53,7 +67,7 @@ function loadArticleList () {
 	var ts = Math.round((new Date()).getTime() / 1000);
 	//Check if the user comes from the settings menu, if so, send him directly to parsing
 	if (localStorage.loaded != 'true' && ts - localStorage.since >= 300) {
-		$.post('https://getpocket.com/v3/get', "state=all&since="+localStorage.since+"&consumer_key=" + pocketkey + "&access_token="+localStorage.accesskey, function (response) {
+		$.post('https://getpocket.com/v3/get', getPocketQueryParams(), function (response) {
 			console.log(response);
 			var response_json = JSON.parse(response);
 			var article_list = response_json.list;
