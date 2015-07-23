@@ -1,9 +1,9 @@
 {
 	"name": "Pocket for FxOS",
-	"description": "A Pocket (ReadItLater) client for Firefox OS. Based on NISI"
+	"description": "A Pocket (ReadItLater) client for Firefox OS. Based on NISI",
 	"launch_path": "/index.html",
 	"developer": {
-		"name": "Shing Lyu"
+		"name": "Shing Lyu",
 		"url": "https://shinglyu.github.io/"
 	},
 	"version":1.01,
