@@ -1,10 +1,10 @@
 {
-	"name": "NISI",
-	"description": "NISI is a simple pocket client for Firefox OS.",
+	"name": "Pocket for FxOS",
+	"description": "A Pocket (ReadItLater) client for Firefox OS. Based on NISI"
 	"launch_path": "/index.html",
 	"developer": {
-		"name": "Jan Thiemen Postema",
-		"url": "http://github.com/janthiemen/nisi_fxos"
+		"name": "Shing Lyu"
+		"url": "https://shinglyu.github.io/"
 	},
 	"version":1.01,
 	"fullscreen": "false",
