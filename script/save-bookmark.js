@@ -47,7 +47,7 @@ $('#addUrl').click(function() {
 	}
     var encodedURL = encodeURI(url);
     $.post('https://getpocket.com/v3/add', {"url":encodedURL, "consumer_key":"16297-b6a29ebe92585e0ce5f52ae0", "access_token":localStorage.accesskey}, function (response) {
-		alert("The url was succesfully saved to pocket! You can now add another url, or press the back button to get back to your article list.");
+    window.close();
     });
 });
 
@@ -59,7 +59,7 @@ $('#addUrlActivity').click(function() {
 	}
     var encodedURL = encodeURI(url);
     $.post('https://getpocket.com/v3/add', {"url":encodedURL, "consumer_key":"16297-b6a29ebe92585e0ce5f52ae0", "access_token":localStorage.accesskey}, function (response) {
-		alert("The url was succesfully saved to pocket! You can now close this window by pressing the HOME button.");
+    window.close();
     });
 });
 
