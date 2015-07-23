@@ -32,7 +32,7 @@ if (!localStorage.list) {
 		localStorage.list = JSON.stringify(response_json.list);
 		parseArticles ();
 		localStorage.sortingName = 'timestamp'; 
-		localStorage.sortingAsc = true;
+		localStorage.sortingAsc = false;
     });
 } else {
 	loadArticleList ();
