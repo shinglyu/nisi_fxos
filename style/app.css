@@ -51,7 +51,6 @@ section[role="region"] {
 #article_content_container {
     font-size: 1.9rem;
     overflow : auto;
-    min-height: 100vh;
 }
 #article_content_container progress{
   text-align:center;
@@ -125,6 +124,7 @@ menu {
   padding-left: 0.5em;
   background-color: #EfE0B9;
   color: #643B0F;
+  min-height:100%;
 }
 
 #article_content h1,h2,h3{
@@ -132,7 +132,7 @@ menu {
   font-weight:bold;
 }
 
-#article_content img {
+#article_content img,iframe {
   width: 100%;
 }
 
