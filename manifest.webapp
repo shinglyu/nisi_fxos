@@ -8,7 +8,6 @@
 	},
 	"version":"1.00",
 	"fullscreen": "false",
-	"orientation": "portrait-primary",
 	"type": "privileged",
 	"permissions": {
 		"systemXHR": {
