@@ -117,9 +117,15 @@ menu {
 
 #article_content{
   line-height: 1.8em;
-  padding: 0.5em;
+  padding-right: 0.5em;
+  padding-left: 0.5em;
   background-color: #EfE0B9;
   color: #643B0F;
+}
+
+#article_content h1,h2,h3{
+  /*line-height: 2.0rem;*/
+  font-weight:bold;
 }
 
 #article_content img {

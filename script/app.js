@@ -3,8 +3,8 @@
 ----------------------- */
 //Check for first run
 //alert(localStorage.accesskey);
-pocketkey = "POCKETCONSUMERKEY";
-readabilityToken= "READABILITYTOKEN";
+pocketkey = "POCKETCONSUMERKEY"; 
+readabilityToken= "READABILITYTOKEN"; 
 
 function getPocketQueryParams() {
   var since = new Date();
@@ -13,10 +13,10 @@ function getPocketQueryParams() {
   return ("state=" + "all"
     + "&consumer_key=" + pocketkey 
     + "&access_token="+ localStorage.accesskey 
-    + "&since=" + since.getTime() / 1000 + 
+    + "&since=" + since.getTime() / 1000  
     //+ "&sort=" + "newest"
     + "&sort=" + "oldest"
-  )
+  );
 }
 if (!localStorage.accesskey) {
 	window.location.href = "login.html";
@@ -124,7 +124,7 @@ function parseArticles (favorite) {
 				var month = date.getMonth() + 1;
 				var hours = date.getHours() + 1;
 				var minutes = date.getMinutes() + 1;
-				var time = date.getFullYear() +'-'+month+'-'+date.getDate();+' '+hours+':'+minutes
+				var time = date.getFullYear() +'-'+month+'-'+date.getDate()+' '+hours+':'+minutes;
 				$('#articles').append('<li article-url="'+url+'" article-id="'+article_list[property].item_id+'" id="article'+article_list[property].item_id+'"><a id="article-href" href="#"><p id="article-title"><span class="title span_colored">'+article_list[property].resolved_title+'</span></p><p id="article-content"><span class="time span_colored">'+time+' </span><span class="span_colored excerpt">'+article_list[property].excerpt+'</span><span class="favorite">'+article_list[property].favorite+'</span><span class="status">'+article_list[property].status+'</span><span class="timestamp">'+timestamp+'</span></p></a></li>');
 				document.getElementById('article'+article_list[property].item_id).addEventListener('click',function(url) {
 					console.log("hello!");
@@ -183,7 +183,7 @@ function getArticle (url, itemid) {
 			localStorage.setItem(escapedurl, remoteData_string);
 			console.log(localStorage.getItem(escapedurl));
 			handleArticleData(localStorage.getItem(escapedurl));
-		})
+		});
 	}
 }
 
@@ -195,7 +195,12 @@ function handleArticleData (data) {
 	console.log(data);
 	data_json = JSON.parse(data);
 	$('#article_title').replaceWith('<h1 id="article_title">'+data_json.title+'</h1>');
-	$('#article_content_container').replaceWith('<div id="article_content_container">'+data_json.content+'</div>');
+  console.log(data_json.title)
+  console.log($('#article_content_container').innerHTML)
+	$('#article_content_container').replaceWith('<div id="article_content_container">' 
+                                              + "<h3>" + data_json.title.toString() + "</h3>" 
+                                              + "<small>By " + (data_json.author === null ? "Unknown Author": data_json.author) + ", " + data_json.domain + "</small>"  
+                                              + data_json.content+'</div>');
 	console.log($('#articleview_header').height());
 	console.log($(window).height());
 	console.log($(document).height());
