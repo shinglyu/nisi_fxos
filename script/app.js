@@ -7,13 +7,15 @@ pocketkey = "POCKETCONSUMERKEY";
 readabilityToken= "READABILITYTOKEN"; 
 
 function getPocketQueryParams() {
-  var since = new Date();
-  since.setDate(since.getDate() - 10);
+  var loadSince = new Date();
+  loadSince.setDate(since.getDate() - 10);
+
+  localStorage.loadSince = loadSince;
 
   return ("state=" + "all"
     + "&consumer_key=" + pocketkey 
     + "&access_token="+ localStorage.accesskey 
-    + "&since=" + since.getTime() / 1000  
+    + "&since=" + loadSince.getTime() / 1000  
     //+ "&sort=" + "newest"
     + "&sort=" + "oldest"
   );
